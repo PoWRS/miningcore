@@ -709,6 +709,7 @@ namespace Miningcore.Configuration
         public ClusterPaymentProcessingConfig PaymentProcessing { get; set; }
         public NotificationsConfig Notifications { get; set; }
         public ApiConfig Api { get; set; }
+        public PoWRSConfig poWRS { get; set; }
 
         /// <summary>
         /// If this is enabled, shares are not written to the database
@@ -729,5 +730,10 @@ namespace Miningcore.Configuration
         public int? EquihashMaxThreads { get; set; }
 
         public PoolConfig[] Pools { get; set; }
+
+        public class PoWRSConfig
+        {
+            public string TransactionsApiUrl { get; set; }
+        }
     }
 }
