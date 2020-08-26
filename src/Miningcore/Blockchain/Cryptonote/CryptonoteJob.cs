@@ -100,13 +100,14 @@ namespace Miningcore.Blockchain.Cryptonote
 
             var padLength = padded.Length - bytes.Length;
 
-            if(padLength > 0)
+            if(padLength >= 0)
                 bytes.CopyTo(padded.Slice(padLength, bytes.Length));
 
             padded = padded.Slice(0, 4);
             padded.Reverse();
 
-            return padded.ToHexString();
+            var foo = padded.ToHexString();
+            return foo;
         }
 
         private void ComputeBlockHash(ReadOnlySpan<byte> blobConverted, Span<byte> result)
